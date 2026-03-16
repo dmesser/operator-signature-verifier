@@ -71,11 +71,11 @@ go build -o osv .
 
 | Flag | Default | Description |
 |---|---|---|
-| `-catalogs` | `redhat-operator-index-v4.*.json` | Glob pattern matching the FBC catalog files to scan |
-| `-key` | `red-hat-signing-key-v3.txt` | Path to the PEM-encoded public signing key |
-| `-output` | `verification-results.csv` | Path for the output CSV report |
-| `-authfile` | *(none)* | Path to a registry `auth.json` file (as used by Podman/Skopeo) |
-| `-workers` | `5` | Number of parallel verification goroutines |
+| `--catalogs` | `redhat-operator-index-v4.*.json` | Glob pattern matching the FBC catalog files to scan |
+| `--key` | `red-hat-signing-key-v3.txt` | Path to the PEM-encoded public signing key |
+| `--output` | `verification-results.csv` | Path for the output CSV report |
+| `--authfile` | *(none)* | Path to a registry `auth.json` file (as used by Podman/Skopeo) |
+| `--workers` | `5` | Number of parallel verification goroutines |
 
 ### Examples
 
@@ -83,20 +83,20 @@ Verify all Red Hat operator catalog images for OCP 4.17 through 4.21:
 
 ```bash
 ./osv \
-  -catalogs 'redhat-operator-index-v4.{17..21}.json' \
-  -key red-hat-signing-key-v3.txt \
-  -authfile ~/.config/containers/auth.json \
-  -workers 10 \
-  -output results.csv
+  --catalogs 'redhat-operator-index-v4.{17..21}.json' \
+  --key red-hat-signing-key-v3.txt \
+  --authfile ~/.config/containers/auth.json \
+  --workers 10 \
+  --output results.csv
 ```
 
 Verify a single catalog:
 
 ```bash
 ./osv \
-  -catalogs redhat-operator-index-v4.21.json \
-  -key red-hat-signing-key-v3.txt \
-  -authfile auth.json
+  --catalogs redhat-operator-index-v4.21.json \
+  --key red-hat-signing-key-v3.txt \
+  --authfile auth.json
 ```
 
 ## Architecture notes
