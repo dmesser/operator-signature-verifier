@@ -53,7 +53,7 @@ Results are written as a CSV file. Multi-arch images are exploded into one row p
 - **Go 1.23+** (to build)
 - **jq** (used at runtime to stream-parse large FBC files)
 - **Registry credentials** — an `auth.json` file if your catalogs reference images in authenticated registries (same format as `podman login` / `skopeo login`)
-- **Signing key** — the publisher's PEM-encoded public key (PKIX/SPKI format)
+- **Signing key** — the publisher's PEM-encoded public key (PKIX/X509 format)
 
 ## Building
 
@@ -108,4 +108,4 @@ Verify a single catalog:
 
 ## License
 
-This project is provided as-is. See individual dependencies for their respective licenses.
+Apache License 2.0
